@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+{% block content %}
+<main>
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div>
+            <h2>Registro</h2>
+            <input type="text" name="username" placeholder="Nombre de usuario" required />
+            <input type="email" name="email" placeholder="Correo electrónico" required />
+            
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Contraseña" required />
+                <span id="togglePassword" class="fas fa-eye"></span>
+            </div>
+            
+            <div class="password-container">
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmar contraseña" required />
+                <span id="toggleConfirmPassword" class="fas fa-eye"></span>
+            </div>
+        </div>
+        
+        <button type="submit">REGISTRARSE</button>
+        <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></p>
+    </form>
+    
+    <script src="{% static 'js/scrib.js' %}"></script>
+</main>
+{% endblock %}

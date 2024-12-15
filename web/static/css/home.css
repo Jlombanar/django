@@ -1,0 +1,68 @@
+.home {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    display: block;
+}
+
+.hero h1, .hero p, .hero a {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Ajusta para controlar el ancho del contenido */
+}
+
+.hero h1 {
+    top: 20%;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero p {
+    top: 40%;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.hero a.cta {
+    top: 70%;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #bc730d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top:50px;
+}
+
+.footer {
+    color: rgb(20, 20, 20);
+    text-align: center;
+    padding: 20px;
+    margin-top: 0; /* Ensures the footer is right below the content */
+}
+
+.footer a {
+    color: rgb(28, 26, 26);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    position: relative;
+    height: 70vh; 
+    overflow: hidden;
+}

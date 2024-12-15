@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<div class="home" id="home">
+    <div class="hero">
+        <img src="{% static 'img/fondo.png' %}" alt="">
+        <h1>Bienvenidos a Turiscarribean</h1>
+        <p>Bienvenido a Turiscarribean, tu puerta de entrada a las maravillas del Caribe. Fundada con la misión de brindar experiencias únicas y memorables, Turiscarribean se dedica a ofrecer una gama completa de servicios turísticos que incluyen tours personalizados, alojamiento de calidad y actividades emocionantes para todo tipo de viajeros.</p>
+        <a href="{% url 'login' %}" class="cta">Descubre más</a>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2024 Turiscarribean. Todos los derechos reservados.</p>
+        <p><a href="{% url 'contactenos' %}">Contacto</a> 
+    </div>
+</footer>
+{% endblock %}

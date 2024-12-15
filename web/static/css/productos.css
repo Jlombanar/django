@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+    color: blue;
+}
+.blue-card {
+    background-color: rgba(0, 0, 255, 0.5); /* Azul con opacidad ajustable */
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}

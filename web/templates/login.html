@@ -1,0 +1,34 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+{% block content %}
+<main>
+    {% if messages %}
+    <div class="alert-container">
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">
+                {{ message }}
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div>
+            <h2>Inicio de sesión</h2>
+            
+         
+            <input type="text" name="username" placeholder="username" required />
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Contraseña" required />
+                <span id="togglePassword" class="fas fa-eye"></span>
+            </div>
+        </div>
+        <button type="submit">INGRESAR</button>
+        <p>¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></p>
+    </form>
+    
+</main>
+{% endblock %}

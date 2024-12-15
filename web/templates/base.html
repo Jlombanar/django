@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Sitio{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+  <div class='Navbar'>
+    <nav role="navigation" aria-label="Main navigation">
+        <img src="{% static 'img/logo.png' %}" alt="">
+         <ul>
+              
+                <strong>Turiscaribbean</strong>
+              
+              <li><a href="{% url 'home' %}">Inicio</a></li>
+             <li><a href="{% url 'quienes_somos' %}">Quienes Somos</a></li>
+             <li><a href="{% url 'contactenos' %}">Contactenos</a></li>
+              <li><a href="{% url 'login' %}">Login</a></li>
+             
+              </ul>
+
+              
+    </nav>
+  </div>
+</body>
+{% block content %}{% endblock %}
+</html>
