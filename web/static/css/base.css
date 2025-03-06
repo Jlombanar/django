@@ -1,61 +1,63 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 .Navbar {
-    color: #1d1a1a;
+    background-color: white;
     padding: 10px 20px;
+    height: 60px;
+}
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    height: 60px;
-    
+    width: 100%;
 }
 
 .Navbar img {
     height: 50px;
     width: auto;
-    display: flex;
-    align-items: center;
-    gap: 10px; 
 }
 
-.Navbar nav ul {
+/* Estilos para los enlaces de navegación */
+.nav-links {
     list-style: none;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     gap: 40px;
-    margin: 0;
-    padding: 0;
+    flex-grow: 1; /* Hace que ocupe el espacio disponible */
 }
 
-.Navbar nav ul li {
+.nav-links li {
     display: inline;
-    
 }
 
-.Navbar nav ul li a {
+.nav-links li a {
     text-decoration: none;
     color: #141313;
     font-weight: bold;
-    justify-content: center;
-   
 }
 
-
-
-
-
-
-nav[role="navigation"] {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.cart {
+    position: relative;
 }
 
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.carrito-activo {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 50%;
+    padding: 5px;
+}

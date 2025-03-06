@@ -1,0 +1,15 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/confirmar.css' %}">
+
+    <title>Correo Enviado</title>
+</head>
+<body>
+    <h2>Correo enviado</h2>
+    <p>Si tu correo está registrado, hemos enviado un enlace para restablecer tu contraseña.</p>
+    <a href="{% url 'login' %}">Volver al login</a>
+</body>
+</html>
