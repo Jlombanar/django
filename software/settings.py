@@ -1,9 +1,15 @@
 
 from pathlib import Path
+import os
+import environ
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# Configuración de archivos multimedia
+
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
 
 
 
@@ -11,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jyjk+1xdqz#0x-bu5q6o_-tvev7qgb1q4'
+SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -51,7 +57,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'software.urls'
-import os
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -77,12 +83,10 @@ WSGI_APPLICATION = 'software.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3'
-        
+        'ENGINE': env('DB_ENGINE'),
+        'NAME': BASE_DIR / env('DB_NAME'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -128,11 +132,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # email backend
 
-EMAIL_BACKEND= 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST= 'smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_USE_TLS=True
-EMAIL_HOST_USER= 'jalmpa77@gmail.com'
-EMAIL_HOST_PASSWORD='hwfo cxub rfgy dpyy'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_USE_TLS = env("EMAIL_USE_TLS")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 
 
